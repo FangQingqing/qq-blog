@@ -41,6 +41,7 @@ module.exports = {
         link: "https://github.com/FangQingqing"
       }
     },
+    footer: false,
     pagination: {
       perPage: 5
     },

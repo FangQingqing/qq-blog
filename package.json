@@ -7,11 +7,13 @@
     "dev": "vuepress dev src",
     "build": "vuepress build src"
   },
+  "repository": "git+https://github.com/FangQingqing/qq-blog.git",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "fqq",
+  "license": "MIT",
   "dependencies": {
     "vuepress": "^1.9.5",
     "vuepress-theme-melodydl": "^1.1.2"
-  }
+  },
+  "private": false
 }

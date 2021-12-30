@@ -1,6 +1,7 @@
 module.exports = {
   title: "青青子衿的博客",
   description: "记录工作中学到的知识点。",
+  base: "/qq-blog/",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no" }]
@@ -24,7 +25,7 @@ module.exports = {
     header: {
       home: {
         title: "主页",
-        subtitle: "从事前端开发的程序媛，典型工科女，却充满文艺范，时而写写文字，拍拍照",
+        subtitle: "从事前端开发的程序媛，典型工科女",
         headerImage: "/home-bg.jfif"
       },
       tags: {

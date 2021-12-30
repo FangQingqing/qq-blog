@@ -11,8 +11,8 @@ module.exports = {
     title: "我的博客",
     personalInfo: {
       name: "青青子衿",
-      avatar: "/avatar.jpeg",
-      headerBackgroundImg: "/avatar-bg.jfif",
+      avatar: "/qq-blog/avatar.jpeg",
+      headerBackgroundImg: "/qq-blog/avatar-bg.jfif",
       description: "一枚程序媛，爱工作，爱生活！",
       email: "1350221123@qq.com",
       location: "重庆 渝北"
@@ -26,14 +26,14 @@ module.exports = {
       home: {
         title: "主页",
         subtitle: "从事前端开发的程序媛，典型工科女",
-        headerImage: "/home-bg.jfif"
+        headerImage: "/qq-blog/home-bg.jfif"
       },
       tags: {
         title: "标签",
         subtitle: "知识点记着记着就熟了",
-        headerImage: "/tags-bg.jfif"
+        headerImage: "/qq-blog/tags-bg.jfif"
       },
-      postHeaderImg: "/post-bg.jfif"
+      postHeaderImg: "/qq-blog/post-bg.jfif"
     },
     sns: {
       github: {

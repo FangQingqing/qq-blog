@@ -2,7 +2,7 @@
 layout: about
 title: 关于
 subtitle: 你可以很好，但你无需完美
-headerImage: /about-bg.jfif
+headerImage: /qq-blog/about-bg.jfif
 ---
 
 作者信息

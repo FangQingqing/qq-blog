@@ -32,6 +32,35 @@ npm install --save-dev babel-preset-react (react规则)
 - 只在声明所在的块级作用域内有效
 - 不可重复声明，保证的是变量指向的内存地址不得改动
 
+## Symbol
+symbol是JS语言的第七种数据类型，表示独一无二的值。更多使用于对象的属性命名，防止属性名的冲突。
+
+每一个Symbol值都是不相等的，用于对象的属性名时，就能保证不会出现同名的属性。这个对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。
+```js
+let mySymbol = Symbol();
+
+// 第一种写法
+let a = {};
+a[mySymbol] = "hello!";
+
+// 第二种写法
+let a = {
+  [mySymbol]: "hello!"
+};
+
+// 第三种写法
+let a = {};
+Object.defineProperty(a, mySymbol, { value: "hello!" });
+
+// 以上写法都得到同样结果
+a[mySymbol] // "hello!"
+```
+注意：
+- Symbol值作为对象名时，不能用点运算符
+- 在对象内部，使用Symbol值定义属性时，Symbol值必须放在方括号中
+- Symbol值作为属性名时，该属性还是公开属性，不是私有属性
+- Symbol作为属性名，遍历对象的时候，该属性不会出现在for...in，for...of循环中，也不会被Object.keys()，Object.getOwnPropertyNames()，JSON.stringify()返回
+
 ## 变量的解构赋值
 ####  数组的解构赋值
 - ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值
@@ -116,7 +145,7 @@ let [a, b, c] = example();
 ## 数值的扩展
 - 二进制表示：前缀0b or 0B，八进制表示：前缀0o or 0O
 - Number.isFinite()：判断数值是否为有限的，非数值一律返回false
-- Number.isNaN()：只有对NaN才返回true，非NaN一律返回true
+- Number.isNaN()：只有对NaN才返回true，非NaN一律返回false
 - Number.parseInt(), Number.parseFloat()
 - Number.isInteger()：判断一个值是否为整数
 - Number.EPSILON：极小常数  2.220446049250313e-16
@@ -280,7 +309,7 @@ Symbol.keyFor()：返回一个已登记的Symbol类型值的key
 - 是异步编程的一种解决方案
 - 是一个容器，里面保存着某个未来才会结束的事件
 - 是一个对象，从它可以获取异步操作的消息
-- 特点：对象的状态不受外界影响(pening, rsolved, rejected), 一旦状态改变，就不会再变
+- 特点：对象的状态不受外界影响(pending, fulfilled, rejected), 一旦状态改变，就不会再变
 - 创造Promise实例
 ```js
 var promise = new Promise(function(resolve, reject) {

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端笔试题 | 青青子衿的博客</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/qq-blog/favicon.ico">
+    <meta name="description" content="记录工作中学到的知识点。">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/qq-blog/assets/css/0.styles.15e1bad7.css" as="style"><link rel="preload" href="/qq-blog/assets/js/app.db93c5ad.js" as="script"><link rel="preload" href="/qq-blog/assets/js/6.cb21b8bc.js" as="script"><link rel="preload" href="/qq-blog/assets/js/15.aa6b6676.js" as="script"><link rel="prefetch" href="/qq-blog/assets/js/10.522ee9d8.js"><link rel="prefetch" href="/qq-blog/assets/js/11.a1363106.js"><link rel="prefetch" href="/qq-blog/assets/js/12.5bf2b9ed.js"><link rel="prefetch" href="/qq-blog/assets/js/13.24a8f48c.js"><link rel="prefetch" href="/qq-blog/assets/js/14.5d09d6b0.js"><link rel="prefetch" href="/qq-blog/assets/js/16.e490b629.js"><link rel="prefetch" href="/qq-blog/assets/js/17.a9227964.js"><link rel="prefetch" href="/qq-blog/assets/js/2.007c0945.js"><link rel="prefetch" href="/qq-blog/assets/js/3.ee4255b4.js"><link rel="prefetch" href="/qq-blog/assets/js/4.0f9a0595.js"><link rel="prefetch" href="/qq-blog/assets/js/5.b57ccb65.js"><link rel="prefetch" href="/qq-blog/assets/js/7.fa886c89.js"><link rel="prefetch" href="/qq-blog/assets/js/8.c026986c.js"><link rel="prefetch" href="/qq-blog/assets/js/9.0a91e439.js">
+    <link rel="stylesheet" href="/qq-blog/assets/css/0.styles.15e1bad7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-7f2e4136><header class="header-container" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(/qq-blog/post-bg.jfif);" data-v-93921ff8 data-v-7f2e4136><nav class="navbar" style="position:absolute;opacity:1;transition:all 0.5s ease-in-out;" data-v-93921ff8><a href="/qq-blog/" class="navbar-link router-link-active">
+    我的博客
+  </a> <ul class="navbar-links"><li><a href="/qq-blog/" class="router-link-active">
+        主页
+      </a></li><li><a href="/qq-blog/about/">
+        关于
+      </a></li><li><a href="/qq-blog/tags/">
+        标签分类
+      </a></li></ul> <div id="nav-icon"><span></span><span></span><span></span></div></nav> <div class="header-title" data-v-93921ff8 data-v-93921ff8><h1 data-v-93921ff8>前端笔试题</h1> <p data-v-93921ff8></p></div></header> <div class="container" data-v-b3fda33c data-v-7f2e4136><main class="main" style="width:60%;" data-v-b3fda33c><div class="post" data-v-b3fda33c data-v-b3fda33c><article class="main-div"><div class="post-content content content__default"><p>这些是我大四找工作时做过的笔试题，对于当时的我觉得很难，做了笔记；虽然现在去看觉得很简单了，但是一直很注重基础的我看了以后还是会有不一样的收获，所以我整理了一下，也相当于让自己复习下基础。</p> <ul><li>原型链</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">obj</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'name2'</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">obj</span><span class="token punctuation">(</span><span class="token string">'name1'</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">obj</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// name1</span>
+conosle<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// name2</span>
+</code></pre></div><ul><li>块级元素占用的实际宽度与它的<strong>background</strong>属性有关</li> <li><strong>position:absolute</strong>属性不会让div脱离文档流</li> <li>使用<strong>for-in</strong>循环数组中的元素会枚举原型链上所有的属性，过滤这些属性的方式是使用<strong>hasProperty</strong>函数</li> <li>W3C标准定义的阻止事件向父容器传递的方法: <strong>e.stopPropagation()</strong></li> <li>参数求和</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> nResult <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    nResult <span class="token operator">+=</span> window<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> nResult<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">1000</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>CSS的flexbox布局，不能实现多个宽高不等的元素，无缝瀑布流布局</li> <li><strong>Header, Article, Address</strong>都属于语义化明确的标签</li> <li>标准盒子中：盒子总宽度 = 左右margin + 左右border + 左右padding + width</li> <li>IE盒子中： 盒子总宽度= 左右margin + width （包括左右padding和左右border）</li> <li><strong>javascript: void(0);</strong> 表示一个死链接，点击后无任何效果</li> <li>Ajax的核心：JavaScript对象XMLHttpRequest,异步请求方式，支持客户端和服务器之间的数据传递</li> <li>浏览器BOM对象：window, document, history, location, navigator, screen</li> <li>sessionStorage, localStorage和cookie之间的区别</li></ul> <div class="language- extra-class"><pre class="language-text"><code>相同：
+都保存在浏览器端，且同源的
+区别：
+1.cookie在浏览器和服务器间来回传递，而sessionStorage和localStorage不会把数据发给服务器，仅在本地保存
+2.cookie数据不能超过4k,而sessionStorage和localStorage数据可达5M或更大
+3.数据有效期不同，sessionStorage仅在当前浏览器窗口关闭前有效，localStorage始终有效，持久
+4.localStorage和cookie在所有同源中共享，sessionStorage则不行
+</code></pre></div><ul><li>Ajax请求过程</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 创建请求对象</span>
+<span class="token keyword">function</span> <span class="token function">create</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    http_request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>ActiveXObject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    http_request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">'Microsoft.XMLHTTP'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> http_request
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 发送请求</span>
+<span class="token keyword">function</span> <span class="token function">makeRequest</span> <span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  http_request <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  http_request<span class="token punctuation">.</span>onreadyStateChange <span class="token operator">=</span> alertContents
+  http_request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+  http_request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 响应函数</span>
+<span class="token keyword">function</span> <span class="token function">alertContents</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>http_request<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>http_request<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> xmlDoc <span class="token operator">=</span> http_request<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token constant">XML</span>
+      <span class="token keyword">var</span> rootNode <span class="token operator">=</span> xmlDoc<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">item</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span>rootNode<span class="token punctuation">.</span>firstChild<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'There was a problem with the request'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div></article> <!----></div></main> <aside class="aside" data-v-b3fda33c data-v-b3fda33c><div class="info-card main-div" data-v-1311ce9e data-v-b3fda33c><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(/qq-blog/avatar-bg.jfif);" data-v-1311ce9e><img src="/qq-blog/avatar.jpeg" alt="青青子衿" class="info-avatar" data-v-1311ce9e></div> <div class="info-card-body" data-v-1311ce9e><section class="info-name" data-v-1311ce9e>
+      青青子衿
+    </section> <section class="info-desc" data-v-1311ce9e>一枚程序媛，爱工作，爱生活！</section> <section class="info-contact" data-v-1311ce9e><section data-v-1311ce9e><span data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:1em;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-location" data-v-1311ce9e data-v-1311ce9e></use></svg><span class="info-text" data-v-1311ce9e data-v-1311ce9e>
+          重庆 渝北
+        </span></span></section> <!----> <section data-v-1311ce9e><span data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:1em;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-email" data-v-1311ce9e data-v-1311ce9e></use></svg><span class="info-text" data-v-1311ce9e data-v-1311ce9e>
+          1350221123@qq.com
+        </span></span></section></section></div> <div class="info-card-footer" data-v-1311ce9e><p class="footer-sns-link" data-v-1311ce9e><a target="_blank" href="https://github.com/FangQingqing" class="sns-link" data-v-1311ce9e><span class="sns-icon" data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:35px;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-github" data-v-1311ce9e data-v-1311ce9e></use></svg></span></a></p></div></div> <div class="post-toc main-div aside-toc" style="position:relative;top:0;width:0px;" data-v-b3fda33c><h4>- CATALOG</h4> <!----></div></aside></div> <footer class="footer" data-v-7f2e4136><p class="footer-sns-link"><a target="_blank" href="https://github.com/FangQingqing" class="sns-link"><span class="sns-icon"><svg class="icon" style="font-size:40px;"><use xlink:href="#icon-github"></use></svg></span></a></p> <div class="copyright"><span id="custom"></span> <!----></div></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/qq-blog/assets/js/app.db93c5ad.js" defer></script><script src="/qq-blog/assets/js/6.cb21b8bc.js" defer></script><script src="/qq-blog/assets/js/15.aa6b6676.js" defer></script>
+  </body>
+</html>
